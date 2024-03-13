@@ -1,24 +1,28 @@
 import React from "react";
 import dayjs from "dayjs";
-function SiderbarNoteList({ notes }: any) {
+import SiderbarNoteItem from "@/components/SiderbarNoteItem";
+
+interface noteType {
+  title: string;
+  content: string;
+  updateTime: string;
+}
+async function SiderbarNoteList({ notes }: any) {
+  const sleep = (ms: any) =>
+    new Promise((r) => setTimeout(r, ms));
+  await sleep(5000);
   const arr = Object.entries(notes);
   if (arr.length == 0) return <div>no notes</div>;
+
   return (
     <ul>
       {arr.map(([noteId, note]) => {
-        const { title, updateTime } = JSON.parse(
-          note as any,
-        );
         return (
-          <li>
-            <header>
-              <strong>{title}</strong>
-              <small>
-                {dayjs(updateTime).format(
-                  "YYYY-MM-DD hh:mm:ss",
-                )}
-              </small>
-            </header>
+          <li key={noteId}>
+            <SiderbarNoteItem
+              noteId={noteId}
+              note={JSON.parse(note as any)}
+            ></SiderbarNoteItem>
           </li>
         );
       })}

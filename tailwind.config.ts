@@ -9,9 +9,24 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-radial":
+          "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      animation: {
+        flowWater:
+          "flowWater 1.2s ease-in-out infinite",
+      },
+      keyframes: {
+        flowWater: {
+          "0%": {
+            "background-position": "-200px 0",
+          },
+          "100%": {
+            "background-position": "200px 0", // 假设这是你想要的结束位置
+          },
+        },
       },
     },
   },
