@@ -3,7 +3,7 @@ import SiderbarNoteItemContent from "@/components/SiderbarNoteItemContent";
 import SiderbarNoteItemHeader from "@/components/SiderbarNoteItemHeader";
 
 function SiderbarNoteItem({
-  nodeId,
+  noteId,
   note = {},
 }: any) {
   const {
@@ -14,7 +14,7 @@ function SiderbarNoteItem({
 
   return (
     <SiderbarNoteItemContent
-      id={nodeId}
+      id={noteId}
       title={note.title}
       expandChildren={
         <p>

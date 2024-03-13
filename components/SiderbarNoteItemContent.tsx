@@ -16,6 +16,7 @@ function SiderbarNoteItemContent({
     setIsExpanded(!isExpanded);
     setHeight(isExpanded ? "50px" : "70px");
   };
+
   return (
     <div
       className="relative bg-gray-50 mx-4 mb-2 pl-3 group transition-all ease-in-out duration-8000"

@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex h-full">
+      <body className="flex h-full bg-gray-50">
         <Siderbar></Siderbar> {children}
       </body>
     </html>
