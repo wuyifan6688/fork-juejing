@@ -15,6 +15,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       animation: {
+        //todo bug
         flowWater:
           "flowWater 1.2s ease-in-out infinite",
       },
