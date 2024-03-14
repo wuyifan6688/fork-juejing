@@ -8,7 +8,7 @@ async function Page({ params }: any) {
 
   const sleep = (ms: any) =>
     new Promise((r) => setTimeout(r, ms));
-  await sleep(5000);
+  await sleep(50);
   if (note == null) {
     return (
       <div>

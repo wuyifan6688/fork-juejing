@@ -10,7 +10,7 @@ interface noteType {
 async function SiderbarNoteList({ notes }: any) {
   const sleep = (ms: any) =>
     new Promise((r) => setTimeout(r, ms));
-  await sleep(5000);
+  await sleep(100);
   const arr = Object.entries(notes);
   if (arr.length == 0) return <div>no notes</div>;
 

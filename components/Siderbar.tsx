@@ -3,6 +3,7 @@ import Link from "next/link";
 import SiderbarNoteList from "@/components/SiderbarNoteList";
 import { getALlNotes } from "@/lib/redis";
 import NoteListSkeleton from "@/components/NoteListSkeleton";
+import EditButton from "@/components/EditButton";
 
 async function Siderbar(props: any) {
   const notes = await getALlNotes();
@@ -19,7 +20,10 @@ async function Siderbar(props: any) {
         ></img>{" "}
         <strong>react notes</strong>
       </Link>
-      <section></section>
+      <section className="ml-3 my-3">
+        {" "}
+        <EditButton noteId={null}>NEW</EditButton>
+      </section>
       <nav>
         <Suspense fallback={<NoteListSkeleton />}>
           {" "}

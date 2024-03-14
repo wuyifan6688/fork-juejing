@@ -17,7 +17,7 @@ function NotePreview({ children }: any) {
     },
   );
   return (
-    <div className="ml-20">
+    <div className=" ">
       <div
         className="text-with-markdown"
         dangerouslySetInnerHTML={{

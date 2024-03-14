@@ -11,7 +11,9 @@ function Note({ noteId, note }: any) {
           {title}
         </strong>
         <small>{updateTime}</small>
-        <EditButton>EDIT</EditButton>
+        <EditButton noteId={noteId}>
+          EDIT
+        </EditButton>
       </div>
       <NotePreview noteId={noteId}>
         {content}

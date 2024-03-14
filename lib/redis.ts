@@ -24,6 +24,12 @@ export async function updataNote(
   await redis.hset("notes", [uuid], data);
 }
 
+export async function addNote(data: any) {
+  const uuid = Date.now().toString();
+  await redis.hset("notes", [uuid], data);
+  return uuid;
+}
+
 export async function getNote(uuid: any) {
   let result = await redis.hget("notes", uuid);
   return JSON.parse(result as string);
