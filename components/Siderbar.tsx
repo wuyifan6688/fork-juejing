@@ -4,9 +4,11 @@ import SiderbarNoteList from "@/components/SiderbarNoteList";
 import { getALlNotes } from "@/lib/redis";
 import NoteListSkeleton from "@/components/NoteListSkeleton";
 import EditButton from "@/components/EditButton";
+import SidebarSearchField from "@/components/SidebarSearchField";
 
 async function Siderbar(props: any) {
   const notes = await getALlNotes();
+  console.log(notes, 22);
   return (
     <section className=" w-1/5 h-full bg-white">
       <Link
@@ -21,7 +23,7 @@ async function Siderbar(props: any) {
         <strong>react notes</strong>
       </Link>
       <section className="ml-3 my-3">
-        {" "}
+        <SidebarSearchField></SidebarSearchField>
         <EditButton noteId={null}>NEW</EditButton>
       </section>
       <nav>
