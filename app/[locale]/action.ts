@@ -31,7 +31,7 @@ export async function saveNote(
   if (!validated.success)
     return { error: validated.error.issues };
   await sleep(2000);
-  console.log(noteId, "pp");
+
   if (noteId) {
     await updataNote(
       noteId,

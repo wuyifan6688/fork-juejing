@@ -19,7 +19,7 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/actions": ["app/[locale]/actions.js"],
+      "@/actions": ["app/[locale]/action.ts"],
       "@/*": ["./*"],
 
     }

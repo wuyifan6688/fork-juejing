@@ -5,10 +5,11 @@ import { getALlNotes } from "@/lib/redis";
 import NoteListSkeleton from "@/components/NoteListSkeleton";
 import EditButton from "@/components/EditButton";
 import SidebarSearchField from "@/components/SidebarSearchField";
+import SidebarImport from "@/components/SidebarImport";
 
 async function Siderbar(props: any) {
   const notes = await getALlNotes();
-  console.log(notes, 22);
+
   return (
     <section className=" w-1/5 h-full bg-white">
       <Link
@@ -34,6 +35,7 @@ async function Siderbar(props: any) {
           ></SiderbarNoteList>
         </Suspense>
       </nav>
+      <SidebarImport></SidebarImport>
     </section>
   );
 }

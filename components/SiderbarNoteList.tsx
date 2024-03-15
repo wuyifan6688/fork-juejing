@@ -1,5 +1,5 @@
 import React from "react";
-import dayjs from "dayjs";
+
 import SiderbarNoteItem from "@/components/SiderbarNoteItem";
 import SiderbarNoteListFilter from "@/components/SiderbarNoteListFilter";
 
@@ -15,7 +15,26 @@ async function SiderbarNoteList({ notes }: any) {
   const arr = Object.entries(notes);
   if (arr.length == 0) return <div>no notes</div>;
 
-  return <SiderbarNoteListFilter note={notes} />;
+  return (
+    <SiderbarNoteListFilter>
+      {Object.entries(notes).map(
+        ([noteId, note]) => {
+          const noteData = JSON.parse(
+            note as string,
+          );
+
+          {
+            return (
+              <SiderbarNoteItem
+                noteId={noteId}
+                note={JSON.parse(note as string)}
+              ></SiderbarNoteItem>
+            );
+          }
+        },
+      )}
+    </SiderbarNoteListFilter>
+  );
 }
 
 export default SiderbarNoteList;
