@@ -21,6 +21,7 @@
     "paths": {
       "@/actions": ["app/[locale]/action.ts"],
       "@/*": ["./*"],
+      "@/auth": ["./auth.js"]
 
     }
   },

@@ -38,5 +38,31 @@ export async function getNote(uuid: any) {
 export async function delNote(uuid: any) {
   return redis.hdel("notes", uuid);
 }
+export async function addUser(
+  username: any,
+  password: any,
+) {
+  await redis.hset("users", [username], password);
+  return {
+    name: username,
+    username,
+  };
+}
+
+export async function getUser(
+  username: any,
+  password: any,
+) {
+  const passwordFromDB = await redis.hget(
+    "users",
+    username,
+  );
+  if (!passwordFromDB) return 0;
+  if (passwordFromDB !== password) return 1;
+  return {
+    name: username,
+    username,
+  };
+}
 
 export default redis;

@@ -21,8 +21,7 @@ function SiderbarNoteListFilter({
       {Children.map(
         children,
         (child: ReactElement, index) => {
-          const title =
-            child!.props.children.props.title;
+          const title = child!.props.title;
           if (
             !searchText ||
             (searchText &&
